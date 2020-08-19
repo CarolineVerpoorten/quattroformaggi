@@ -6,7 +6,9 @@
 
 <article class="post">
     <h2><?php the_title(); ?></h2>
-    <?php the_post_thumbnail('thumbnail'); ?>
+    <p>sdgjosqgjsfogjsqgoijsqohij</p>
+
+    <?php the_post_thumbnail(); ?>
 
     <p class="post__meta">
         Publiée le <?php the_time(get_option('date_format')); ?>

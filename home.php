@@ -6,6 +6,7 @@
 
 <article class="post">
     <h2><?php the_title(); ?></h2>
+    <p> sfgoginsdofginqpofhnspognsqpignsqfpg </p>
     <?php the_post_thumbnail('thumbnail'); ?>
 
     <p class="post__meta">
