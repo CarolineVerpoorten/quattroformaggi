@@ -4,7 +4,9 @@
 
 <?php if(have_posts()):while(have_posts()):the_post(); ?>
 
+<?php if(has_category('Recette')){?>
 <article class="post">
+
     <h2><?php the_title(); ?></h2>
     <?php the_post_thumbnail('thumbnail'); ?>
 
@@ -18,8 +20,9 @@
     <p>
         <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
     </p>
+
 </article>
 
-<?php endwhile; endif; ?>
+<?php } endwhile; endif; ?>
 
 <?php get_footer(); ?>

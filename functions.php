@@ -15,3 +15,56 @@ add_theme_support( 'title-tag' );
 add_filter('use_block_editor_for_post', '__return_false', 10);
 // Désactivation de l'éditeur de block pour les post-types
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+//Permet de déclarer un script ou un style
+//add_action( 'wp_enqueue_scripts', 'votre_fonction' );
+
+//Déclaration des Custom Post Type
+
+function quattroformaggi_register_post_type(){
+
+        $labels = array(
+            'name' => 'Recettes',
+            'all-items' => 'Toutes les recettes',
+            'singular_name' => 'Recette',
+            'add_new_item' => 'Ajouter une recette',
+            'edit_item' => 'Modifier une recette',
+            'menu_name' => 'Recettes'
+        );
+
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => array('title','editor','thumbnail','excerpt','custom-fields','page-attributes'),
+            'Menu_position' => 5,
+            'Menu_icon' => 'dashicons-edit-page',
+            'taxonomies' => array('category'),
+        );
+
+        register_post_type('recettes',$args);
+}
+
+add_action('init','quattroformaggi_register_post_type');
+
+register_nav_menus( array(
+    'main' => 'Menu Principal',
+    'sub' => 'Menu footer'
+));
+
+function quattroformaggi_register_assets() {
+
+    // Déclarer jQuery
+    wp_deregister_script( 'jquery' ); // On annule l'inscription du jQuery de WP
+    wp_enqueue_script( // On déclare une version plus moderne
+        'jquery',
+        'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        false,
+        '3.3.1',
+        true
+    );
+
+    // ...
+}
+add_action( 'wp_enqueue_scripts', 'quattroformaggi_register_assets' );
