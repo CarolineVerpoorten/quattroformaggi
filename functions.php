@@ -41,6 +41,8 @@ function quattroformaggi_register_post_type(){
             'Menu_position' => 5,
             'Menu_icon' => 'dashicons-edit-page',
             'taxonomies' => array('category'),
+            'capability_type' => array('recette','recettes'),
+            'map_meta_cap' => true
         );
 
         register_post_type('recettes',$args);

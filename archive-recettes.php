@@ -19,7 +19,7 @@ get_header(); ?>
         <?php
 
         $category = get_the_category();
-        
+
         ?>
         <?php echo $category[0]->name; ?>
     </p>
