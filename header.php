@@ -8,9 +8,7 @@
 
 <body <?php body_class(); ?>>
     <header class="header">
-        <a href="<?php echo home_url( '/' ); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/skull.png" alt="Logo">
-        </a>  
+       <p>NAVBAR</p>
     </header>    
     
     
