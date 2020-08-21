@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="869072aa-5d20-4fb3-973d-7113dc85adfc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/recettes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/recettes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-    </list>
+    <list default="true" id="869072aa-5d20-4fb3-973d-7113dc85adfc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597990142763</updated>
       <workItem from="1597990143800" duration="105000" />
-      <workItem from="1597990357131" duration="600000" />
+      <workItem from="1597990357131" duration="752000" />
     </task>
     <servers />
   </component>
