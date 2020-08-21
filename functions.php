@@ -4,22 +4,28 @@
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
+
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
 
 
-
-// Gestion du menu et des fonctionnalités depuis le panneau d'administration
+/* Gestion du menu et des fonctionnalités depuis le panneau d'administration */
 
 // Désactivation de l'éditeur de block pour les posts
 add_filter('use_block_editor_for_post', '__return_false', 10);
 // Désactivation de l'éditeur de block pour les post-types
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
-//Permet de déclarer un script ou un style
+/*************************************************************************/
+
+/* Permet de déclarer un script ou un style */
+/* Ne sera utilisé qu'à partir du moment où on appelera nos Scripts */
+
 //add_action( 'wp_enqueue_scripts', 'votre_fonction' );
 
-//Déclaration des Custom Post Type
+/*************************************************************************/
+
+/* Déclaration des Custom Post Type */
 
 function quattroformaggi_register_post_type(){
 
@@ -50,10 +56,18 @@ function quattroformaggi_register_post_type(){
 
 add_action('init','quattroformaggi_register_post_type');
 
+/*************************************************************************/
+
+/* Configuration des menus du site */
+
 register_nav_menus( array(
     'main' => 'Menu Principal',
     'sub' => 'Menu footer'
 ));
+
+/*************************************************************************/
+
+/* Mise à jour du JQuery pour le site si on devait l'appeler */
 
 function quattroformaggi_register_assets() {
 
@@ -67,6 +81,7 @@ function quattroformaggi_register_assets() {
         true
     );
 
-    // ...
 }
 add_action( 'wp_enqueue_scripts', 'quattroformaggi_register_assets' );
+
+/*************************************************************************/
