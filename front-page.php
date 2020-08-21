@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<h1>La liste des recettes</h1>
-
 <?php if(have_posts()):while(have_posts()):the_post(); ?>
 
 <?php if(has_category('Recette')){?>
