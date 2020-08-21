@@ -1,0 +1,22 @@
+{
+  "name": "quatroformaggi",
+  "version": "1.0.0",
+  "description": "Branch Nico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabquo/quattroformaggi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabquo/quattroformaggi/issues"
+  },
+  "homepage": "https://github.com/fabquo/quattroformaggi#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

@@ -1,11 +1,11 @@
 <?php
 /*
-Template Name: Liste Restaurants
+Template Name: Single Restaurant
 */
 get_header();
 if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-    <h1>Restos Archive</h1>
+    <h1>Single restaurant</h1>
 
     <article class="post">
 			<h2><?php the_title(); ?></h2>
@@ -23,6 +23,10 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
             </p>
 		</article>
+		<p>
+    	<strong>Avis :</strong>
+    	<?php echo get_post_meta( get_the_ID(), 'titre', true ); ?>
+		</p>
 
   <?php endwhile; endif; ?>
 <?php get_footer(); ?>
