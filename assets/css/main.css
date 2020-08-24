@@ -1,0 +1,80 @@
+.menu-body {
+  font-size: 20px;
+  font-weight: medium; }
+
+.subtitle {
+  font-size: 42px;
+  font-weight: medium; }
+
+.title {
+  font-size: 46px;
+  font-weight: bold;
+  padding-bottom: 60px; }
+
+.all-caps {
+  text-transform: uppercase; }
+
+.muted-text {
+  color: grey; }
+
+.section-title-container {
+  border-bottom-style: solid;
+  width: 150px;
+  height: 60px; }
+
+.section-title {
+  font-size: 27px;
+  font-weight: 600; }
+
+.center {
+  margin: auto;
+  text-align: center; }
+
+.menu-center {
+  margin: auto;
+  max-width: 800px;
+  padding-bottom: 8px; }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline; }
+
+hr {
+  border: 2px dotted;
+  border-style: none none dotted;
+  width: 100%; }
+
+li {
+  list-style-type: none; }
+
+ul {
+  padding-left: 0;
+  padding-top: 10px; }
+
+.nom-plat {
+  white-space: nowrap;
+  padding-right: 1px; }
+
+.prix-plat {
+  font-weight: 600; }
+
+.highlight,
+.not-highlight {
+  padding: 3px 25px 15px 25px; }
+
+.highlight {
+  border: 3px solid #E9C13A; }
+
+.chef-selection {
+  width: 110px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #E9C13A;
+  padding: 1px; }
+
+html {
+  font-family: 'Poppins', sans-serif; }
