@@ -2,31 +2,20 @@
 /*
 Template Name: Single Restaurant
 */
-get_header();
-if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-    <h1>Single restaurant</h1>
+if( have_posts() ) : while( have_posts() ) : the_post();
+  if( get_field('photo') ): ?>
+    <img class="top_image" src="<?php the_field('photo'); ?>" />
+  <?php endif; ?>
+  <img class="top_hach" src="wp-content/themes/quatroformaggi/img/hachures-blanches.png" alt="Hachures">
+  <?php get_header(); ?>
 
-    <article class="post">
-			<h2><?php the_title(); ?></h2>
+  <article class="post">
+    <h3><?php the_field('sur_titre'); ?></h3>
+		<h2><?php the_title(); ?></h2>
+    <a href="#">check our menu</a>
+    <?php the_excerpt(); ?>
+  </article>
 
-        	<?php the_post_thumbnail(); ?>
-
-            <p class="post__meta">
-                Publié le <?php the_time( get_option( 'date_format' ) ); ?>
-                par <?php the_author(); ?> • <?php comments_number(); ?>
-            </p>
-
-      		<?php the_excerpt(); ?>
-
-      		<p>
-                <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
-            </p>
-		</article>
-		<p>
-    	<strong>Avis :</strong>
-    	<?php echo get_post_meta( get_the_ID(), 'titre', true ); ?>
-		</p>
-
-  <?php endwhile; endif; ?>
+<?php endwhile; endif; ?>
 <?php get_footer(); ?>

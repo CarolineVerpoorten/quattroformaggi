@@ -10,3 +10,13 @@ add_theme_support( 'title-tag' );
 add_filter('use_block_editor_for_post', '__return_false', 10);
 // for post types
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+function quattroformaggi_child_register_assets() {
+
+    // Chargement de la feuille du style du theme parent
+     wp_enqueue_style( 'quattroformaggi-theme', get_template_directory_uri() . '/style.css' );
+
+    // Chargement de la feuille de style complémentaire du thème enfant
+     wp_enqueue_style( 'quattroformaggi-child-theme', get_stylesheet_directory_uri() . '/assets/css/main.css' );
+}
+add_action( 'wp_enqueue_scripts', 'quattroformaggi_child_register_assets' );
