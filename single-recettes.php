@@ -16,9 +16,10 @@
                 Avec les étiquettes <?php the_tags(); ?>
             </p>
         </div>
-
+        <p>testestestestestestestset</p>
         <div class="post__content">
-            <?php the_content(); ?>
+            <?php $test = get_field('ingredients_recette'); ?>
+            <?php echo $test; ?>
         </div>
     </article>
 <?php
