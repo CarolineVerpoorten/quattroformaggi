@@ -2,8 +2,21 @@
 /*
 Template Name: Menu Restaurant
  */
-get_header();
-?>
+get_header(); 
+$image = get_field('image');?>
+
+<div class="banner-container" <?php if( !empty( $image ) ):?>style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo esc_url($image['url']); ?>');"<?php endif;?>> 
+
+    <div class="banner-text banner-subtitle" style="color: #FFF;"><?= the_field('sous-titre'); ?></div>
+    <div class="banner-text banner-title all-caps" style="color: #FFF;"><?= the_field('titre'); ?></div>
+    <div class="banner-text banner-link"><hr class="line"/><a href="#" class="proper-link">Order online</a></div>
+
+</div>
+
+<div class="hachures">
+    <img class="bordure-hachure"src="https://raw.githubusercontent.com/becodeorg/LIE-Jepsen-3.20/master/02-the-hill/06-wordpress/project/assets/images/hachures-blanches.png?token=APOXPWZHSGUATKTHO4ABFBS7JYNH6" />
+</div>
+
 <div class="menu-body">
 
     <div class="center">
@@ -37,7 +50,7 @@ get_header();
                     <li class="<?php if($selection == true){ echo 'highlight';}else{ echo 'not-highlight';} ?>" >
                         <div class="flex-container">
                             <div class="nom-plat all-caps"><?= $nom_plat; ?></div>
-                            <hr/>
+                            <hr class="dotted"/>
                             <div class="prix-plat"><?= $prix_plat; ?>€</div>
                         </div>
                         <div class="muted-text"><?= $desc_plat; ?></div>

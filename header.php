@@ -9,7 +9,7 @@
 
 <body <?php body_class(); ?>>
     <header class="header">
-       <p>NAVBAR</p>
+       <p style="color:white;">NAVBAR</p>
     </header>    
     
     

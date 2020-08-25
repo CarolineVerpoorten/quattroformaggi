@@ -1,5 +1,15 @@
 @import 'menu.scss';
 
-html {
+html, body {
     font-family: 'Poppins', sans-serif;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    height: 100%;
+    width: 100%
+}
+
+.header{
+    position: absolute;
+    color: #FFF;
+    z-index: 3;
 }
