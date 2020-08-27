@@ -1,11 +1,14 @@
 @import 'menu.scss';
+@import 'footer.scss';
+@import 'normalize.css';
+@import 'header.scss';
 
 html, body {
     font-family: 'Poppins', sans-serif;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .header{
