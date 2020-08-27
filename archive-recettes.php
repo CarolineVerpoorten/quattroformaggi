@@ -6,29 +6,37 @@ Template Name: Recettes
 
 get_header(); ?>
 
-    <h1>La liste des recettes</h1>
-
 <?php
 
+?>
+
+
+<img src="../wp-content/themes/quattroformaggi/img/resto3.jpg"/><br>
+
+<?php
 $baseURL = "http://".$_SERVER['HTTP_HOST'];
-$recetteType = get_terms(array(
-        'taxonomy' => 'recettetype',
+$recetteType = get_categories(array(
+        'category' => 'recettes',
         'hide_empty' => false,
     ));
 
-
+    echo '<a href="'.$baseURL.'/recettes/">Toutes les recettes</a><br>    ';
     foreach($recetteType as $type){
 
-        echo '<a href="'.$baseURL.'/recettes/' . $type->slug .'">'.$type->name .'</a>';
-        echo '<br>';
+        if($type->slug != 'default_cat')
+        echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a><br>    ';
     }
 
 
-    if(have_posts()){
 
+    if(have_posts()){ ?>
+        <h1>Toutes les recettes</h1>
+        <?php
         while(have_posts()):the_post();
 
+
         ?>
+
 
 
 <article class="post">
@@ -41,16 +49,19 @@ $recetteType = get_terms(array(
 
     $RecupCategoryRecette = get_field('categorie_recette');
     $ArrayImageRecette = get_field('image_recette');
-
+    $date = get_the_date();
     $titreRecette = get_field('titre_recette');
     $categoryRecette = $RecupCategoryRecette->name;
     $URLImageRecette = $ArrayImageRecette['url'];
+    $description = get_field('description_recette')
 
     ?>
 
     <img src="<?php echo $URLImageRecette; ?>"/>
+    <p><?php echo $date; ?></p>
     <p><?php echo $categoryRecette; ?></p>
     <p><?php echo $titreRecette; ?></p>
+    <p><?php echo $description; ?></p>
 
 
 

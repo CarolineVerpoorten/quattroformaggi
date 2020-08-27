@@ -1,5 +1,23 @@
 <?php
 
+// Chargement de la feuille du style du theme parent
+wp_enqueue_style( 'quattroformaggi-theme', get_template_directory_uri() . '/style.css' );
+
+// Ajout de fontawesome
+
+add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
+/**
+ * Register and load font awesome CSS files using a CDN.
+ */
+function prefix_enqueue_awesome() {
+    wp_enqueue_style(
+        'font-awesome-5',
+        'https://use.fontawesome.com/releases/v5.3.0/css/all.css',
+        array(),
+        '5.3.0'
+    );
+}
+
 // Modification de la vue des articles
 
 // Ajouter la prise en charge des images mises en avant
@@ -30,7 +48,7 @@ add_filter('use_block_editor_for_post_type', '__return_false', 10);
 function quattroformaggi_register_post_type(){
 
         $labels = array(
-            'name' => 'Recettes',
+            'name' => 'recettes',
             'all-items' => 'Toutes les recettes',
             'singular_name' => 'Recette',
             'add_new_item' => 'Ajouter une recette',
@@ -42,67 +60,21 @@ function quattroformaggi_register_post_type(){
             'labels' => $labels,
             'public' => true,
             'show_in_rest' => true,
-            'has_archive' => 'recettes',
+            'has_archive' => true,
             'supports' => array('title','editor','thumbnail','excerpt','custom-fields','page-attributes','category'),
             'Menu_position' => 5,
             'Menu_icon' => 'dashicons-edit-page',
-            'taxonomies' => array('recettes'),
-            'capability_type' => array('recette','recettes'),
-            'map_meta_cap' => true,
-            'rewrite' => array(
-                'slug' => 'recettes/%recettetype%', 'with_front' => true),
+            'rewrite' => array('slug' => 'recettes'),
+            'taxonomies' => array('category','post_tag')
         );
 
         register_post_type('recettes',$args);
-
-        $labels = array(
-            'name' => 'Types',
-            'singular_name' => 'Type',
-            'all_items' => 'Tous les types',
-            'edit_item' => 'Editer le type',
-            'view_item' => 'Voir le type',
-            'update_item' => 'Mettre à jour le type',
-            'add_new_item' => 'Ajouter un nouveau type',
-            'search_items' => 'Rechercher parmi les types',
-            'popular_items' => 'Types les plus populaires',
-        );
-
-        $args = array(
-            'labels' => $labels,
-            'public' => true,
-            'meta_box_cb' => false,
-            'show_in_rest' => true,
-            'hierarchical' => true,
-            'rewrite' => array(
-                'slug' => 'recettes'
-            ),
-        );
-
-        register_taxonomy('recettetype','recettes', $args);
 
         unset($labels);
         unset($args);
 }
 
 add_action('init','quattroformaggi_register_post_type');
-
-/*************************************************************************/
-
-/* Création des permaliens pour le Post Type et la taxonomie recettetype */
-
-function recettetype_permalink_structure($post_link, $post) {
-    if (false !== strpos($post_link, '%recettetype%')) {
-        $projectscategory_type_term = get_the_terms($post->ID, 'recettetype');
-        if (!empty($projectscategory_type_term))
-            $post_link = str_replace('%recettetype%', array_pop($projectscategory_type_term)->
-            slug, $post_link);
-        else
-            $post_link = str_replace('%recettetype%', 'uncategorized', $post_link);
-    }
-    return $post_link;
-}
-
-add_filter('post_type_link','recettetype_permalink_structure', 1, 2);
 
 /*************************************************************************/
 
@@ -131,38 +103,6 @@ function quattroformaggi_register_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'quattroformaggi_register_assets' );
-
-/*************************************************************************/
-
-/* Récupération de la liste des toxonomies Recettes */
-
-function recettes_get_taxonomies(){
-
-
-    $recetteType = get_terms(array(
-        'taxonomy' => 'recettetype',
-        'hide_empty' => false,
-    ));
-
-    $typeArray = array(
-        'name' => [],
-        'slug' => [],
-    );
-
-    foreach($recetteType as $type){
-
-
-
-        if(isset($type->name)){
-
-            array_push($typeArray['name'], $type->name);
-            array_push($typeArray['slug'], $type->slug);
-
-        }
-    }
-
-    return $typeArray;
-}
 
 /*************************************************************************/
 
@@ -217,39 +157,17 @@ function recettes_pagination($query) {
 }
 
 /*************************************************************************/
-
-function inspiry_pagination( $query ) {
-    echo "<div class='pagination'>";
-    $big = 999999999; // need an unlikely integer
-    echo paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url ( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'inspiry' ),
-        'next_text' => __( '<i class="fa fa-angle-right"></i>', 'inspiry' ),
-        'current' => max( 1, get_query_var ( 'paged' ) ),
-        'total' => $query->max_num_pages,
-    ) );
-    echo "</div>";
-}
-
-function inspiry_update_taxonomy_pagination( $query ) {
-    if ( is_tax( 'property-city' ) )  {
-
-        // Theme options array
-        global $inspiry_options;
-
-        if ( $query->is_main_query() ) {
-
-            // Get number of properties from theme options
-            $number_of_properties = $inspiry_options['archive_properties_number'];
-
-            if ( !$number_of_properties ) {
-                $number_of_properties = 6;  // default number
-            }
-
-            $query->set ( 'posts_per_page', $number_of_properties );
+    add_action('parse_query', 'changept');
+    function changept()
+    {
+        $category = get_query_var('cat');
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        if (is_category() && !is_admin()) {
+            set_query_var('cat', $category);
+            set_query_var('paged', $paged);
+            set_query_var('posts_per_page', 3);
+            set_query_var('post_type', 'recettes');
         }
-    }
+        return;
 }
-
-add_action( 'pre_get_posts', 'inspiry_update_taxonomy_pagination' );
+/* End of Fix Category Pagination */

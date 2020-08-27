@@ -1,68 +1,63 @@
 <?php
 
 /*
-Template Name: Recettes
+Template Name: Categorie de recettes
 */
 
-get_header();
+get_header(); ?>
 
-
-?>
-    <h1>Taxonomy des recettes</h1>
-<p>testestestestestest</p>
 <?php
 
 $baseURL = "http://".$_SERVER['HTTP_HOST'];
-
-//var_dump($_SERVER);
-$recetteType = get_terms(array(
-    'taxonomy' => 'recettetype',
+$recetteType = get_categories(array(
+    'category' => 'recettes',
     'hide_empty' => false,
 ));
 
-$actualTaxo = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-
-echo '<a href="'.$baseURL.'/recettes/"> Toutes les catégories</a><br>';
-
+echo '<a href="'.$baseURL.'/recettes/">Toutes les recettes</a><br>    ';
 foreach($recetteType as $type){
 
-    if($actualTaxo->slug != $type->slug){
-        echo '<a href="'.$baseURL.'/recettes/' . $type->slug .'">'.$type->name .'</a>';
-    echo '<br>';
-    }
+    if($type->slug != 'default_cat')
+        echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a><br>';
 }
 
+$getCategory = get_the_category();
+$category = $getCategory[0]->name;
+
+?>
 
 
-if(have_posts()){
 
+<?php
+
+if(have_posts()){?>
+    <h1> <?php echo $category; ?></h1>
+    <?php
     while(have_posts()):the_post();
-
 
         ?>
 
 
-        <article class="post">
-
-            <h2><?php the_title(); ?></h2>
-            <?php the_post_thumbnail('thumbnail'); ?>
+            <article class="post">
 
             <?php
 
 
             $RecupCategoryRecette = get_field('categorie_recette');
             $ArrayImageRecette = get_field('image_recette');
-
+            $date = get_the_date();
             $titreRecette = get_field('titre_recette');
             $categoryRecette = $RecupCategoryRecette->name;
             $URLImageRecette = $ArrayImageRecette['url'];
+            $description = get_field('description_recette')
 
             ?>
 
             <img src="<?php echo $URLImageRecette; ?>"/>
+            <p><?php echo $date; ?></p>
             <p><?php echo $categoryRecette; ?></p>
             <p><?php echo $titreRecette; ?></p>
-
+            <p><?php echo $description; ?></p>
 
 
             <p>
@@ -72,13 +67,10 @@ if(have_posts()){
         </article>
 
     <?php endwhile;
-
-    global $wp_query;
-    inspiry_pagination( $wp_query ); // custom pagination function
-
+    recettes_pagination($wp_query);
 } else {
     echo '<p>Aucune recette à afficher</p>';
-}
+};
 
 
 
