@@ -9,7 +9,9 @@
 
 <body <?php body_class(); ?>>
     <header class="header">
-    <?php wp_nav_menu(); ?>
+        <div class="navbar">
+            <?php wp_nav_menu(); ?>
+        </div>
     </header>    
     
     

@@ -1,0 +1,69 @@
+.navbar ul {
+  margin: 20px 2% 0 2%;
+  width: 100%; }
+  @media only screen and (min-width: 768px) {
+    .navbar ul {
+      margin: 40px 10% 0 10%;
+      display: flex;
+      flex-direction: row;
+      align-items: center; } }
+  @media only screen and (min-width: 1025px) {
+    .navbar ul {
+      margin: 40px 15% 0 15%; } }
+
+.navbar li {
+  display: inline;
+  white-space: nowrap; }
+
+.navbar a:link {
+  color: #FFF;
+  text-decoration: none; }
+
+.navbar a:visited {
+  color: #FFF;
+  text-decoration: none; }
+
+.navbar a:hover {
+  color: #FFF;
+  text-decoration: underline; }
+
+.navbar a:active {
+  color: #FFF;
+  text-decoration: underline; }
+
+.title-homepage-link {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10x; }
+  @media only screen and (max-width: 1024px) {
+    .title-homepage-link {
+      font-size: 30px; } }
+
+.restaurants-link,
+.menu-link,
+.recipes-link {
+  font-size: 14px;
+  font-weight: 600; }
+  @media only screen and (max-width: 1024px) {
+    .restaurants-link,
+    .menu-link,
+    .recipes-link {
+      font-size: 20px; } }
+
+.restaurants-link {
+  padding-left: 3%; }
+  @media only screen and (min-width: 768px) {
+    .restaurants-link {
+      padding-left: 10%; } }
+  @media only screen and (min-width: 1025px) {
+    .restaurants-link {
+      padding-left: 30%; } }
+
+.menu-link,
+.recipes-link {
+  padding-left: 10px; }
+  @media only screen and (min-width: 1025px) {
+    .menu-link,
+    .recipes-link {
+      padding-left: 40px; } }
