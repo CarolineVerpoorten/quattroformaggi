@@ -26,15 +26,20 @@ function quattroformaggi_child_register_assets() {
 
 add_action( 'wp_enqueue_scripts', 'quattroformaggi_child_register_assets' );
 
-add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
-/**
- * Register and load font awesome CSS files using a CDN.
- */
-function prefix_enqueue_awesome() {
-    wp_enqueue_style(
-        'font-awesome-5',
-        'https://use.fontawesome.com/releases/v5.3.0/css/all.css',
-        array(),
-        '5.3.0'
-    );
+// afficher les derniers articles d'une catégorie
+// Utilisation : wppln_last_posts('ID DE LA CATEGORIE','NBRE DE POSTS A RETOURNER','AFFICHER LE RESUME');
+function wppln_last_posts($cat_id,$nbr_post,$excerpt) {
+	$query = new WP_Query("cat=$cat_id&posts_per_page=$nbr_post");
+	echo '<ul>';
+	while($query -> have_posts()) :
+		$query->the_post();
+		echo '<li><a href="'.the_permalink().'" rel="bookmark">'.the_title().'</a></li>';
+		if($excerpt == 'true') :
+			echo '<ul><li>'.the_excerpt().'</li></ul>';
+		endif;
+	endwhile;
+	//wp_reset_postdata;
+	echo '</ul>';
 }
+
+?>

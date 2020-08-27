@@ -1,37 +1,252 @@
-@media screen and (max-width: 767px) {
-  @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
-  * {
-    font-family: "Poppins", sans-serif !important;
-  }
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900");
+* {
+  font-family: "Poppins", sans-serif !important;
+}
 
-  body {
-    margin-left: 0px;
-    margin-top: 0px;
-    text-align: center;
-  }
-  body .top_image {
-    width: 100%;
-  }
-  body .top_hach {
-    width: 100%;
-    margin-top: -50px;
-    transform: rotate(180deg);
-  }
-  body .middle_hach {
-    width: 100%;
-  }
-  body .form_res {
-    background-color: whitesmoke;
-  }
+body {
+  margin-left: 0px;
+  margin-top: 0px;
+  text-align: center;
+}
 
-  .top_subtitle {
-    font-size: 60px;
-    font-weigth: 400;
-  }
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
 
-  .front_rest {
-    background-image: url("img/burger party.png");
+h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 10px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 35px;
+  margin-bottom: 100px;
+}
+
+ul {
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.post_text {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.banner-container {
+  width: 100%;
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-text {
+  color: #FFF;
+  position: absolute;
+  z-index: 2;
+  left: 5%;
+}
+@media only screen and (min-width: 768px) {
+  .banner-text {
+    left: 10%;
   }
+}
+
+.banner-title {
+  top: 320px;
+  font-size: 60px;
+  text-align: left;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .banner-title {
+    top: 280px;
+  }
+}
+
+.banner-subtitle {
+  top: 130px;
+  font-size: 40px;
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  .banner-subtitle {
+    top: 200px;
+  }
+}
+
+.line {
+  width: 30px;
+  padding-right: 5px;
+  height: 0;
+}
+
+.banner-link {
+  top: 650px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  align-items: center;
+  white-space: nowrap;
+}
+@media only screen and (min-width: 768px) {
+  .banner-link {
+    top: 550px;
+  }
+}
+
+.proper-link:link {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.proper-link:visited {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.proper-link:hover {
+  text-decoration: underline;
+  color: #FFF;
+}
+
+.proper-link:active {
+  text-decoration: underline;
+  color: #FFF;
+}
+
+.hachures-banner {
+  z-index: 3;
+  width: 100%;
+  top: 830px;
+  position: absolute;
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+@media only screen and (min-width: 768px) {
+  .hachures-banner {
+    top: 825px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .hachures-banner {
+    top: 800px;
+  }
+}
+
+.bordure-hachure {
+  width: 100%;
+}
+
+.top_image {
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.top_hach {
+  width: 100%;
+  margin-top: -50px;
+  transform: rotate(180deg);
+}
+
+.middle_grey {
+  width: 100%;
+  height: 75px;
+  background-color: whitesmoke;
+}
+
+.middle_hach {
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.loc_subtitle {
+  margin-top: 100px;
+  margin-bottom: 0px;
+}
+
+.loc_title {
+  margin-top: -30px;
+}
+
+.form_reservation {
+  background-color: whitesmoke;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding: 50px;
+  padding-bottom: 70px;
+}
+
+.form_label {
+  text-align: left;
+  font-size: 14px;
+}
+
+.form_item {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.form_item input {
+  height: 50px;
+}
+.form_item select {
+  font-size: 18px;
+}
+
+.button_rest {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.p_centered {
+  text-align: center;
+}
+
+.bottom_hach {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  transform: rotate(180deg);
+}
+
+.recipes {
+  background-color: whitesmoke;
+  margin-top: 0px;
+}
+
+.front_rest {
+  background-image: url("img/burger party.png");
 }
 
 /*# sourceMappingURL=single_rest.css.map */
