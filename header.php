@@ -9,7 +9,7 @@
 <body <?php body_class(); ?>>
     <header class="header">
         <a href="<?php echo home_url( '/' ); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/kenny.png" alt="Logo">
+            <img width="100%" src="<?php echo get_template_directory_uri(); ?>/img/banner-top.jpg" alt="Logo">
         </a>
     </header>
 

@@ -1,0 +1,49 @@
+@media screen and (max-width: 767px){
+
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+  * {
+      font-family: 'Poppins', sans-serif !important;
+  }
+
+  body {
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+
+    .top_image {
+      width: 100%;
+    }
+    .top_hach {
+      width: 100%;
+      margin-top: -50px;
+      transform: rotate(180deg);
+    }
+    .middle_hach {
+      width: 100%;
+    }
+    .form_res {
+      background-color: rgb(245, 245, 245);
+    }
+  }
+
+  .top_subtitle {
+    font-size: 60px;
+    font-weigth: 400;
+  }
+
+  .front_rest
+  {
+    background-image: url("img/burger party.png");
+  }
+
+  h2
+  {
+
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {}
+@media screen and (min-width: 1024px) {}

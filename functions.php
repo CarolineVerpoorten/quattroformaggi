@@ -17,6 +17,24 @@ function quattroformaggi_child_register_assets() {
      wp_enqueue_style( 'quattroformaggi-theme', get_template_directory_uri() . '/style.css' );
 
     // Chargement de la feuille de style complémentaire du thème enfant
-     wp_enqueue_style( 'quattroformaggi-child-theme', get_stylesheet_directory_uri() . '/assets/css/main.css' );
+
+
+    wp_enqueue_style( 'quattroformaggi-child-theme', get_stylesheet_directory_uri() . '/assets/css/single_rest.css' );
+
+    wp_enqueue_style( 'quattroformaggi-child-theme', get_stylesheet_directory_uri() . '/assets/css/normalize.css' );
 }
+
 add_action( 'wp_enqueue_scripts', 'quattroformaggi_child_register_assets' );
+
+add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
+/**
+ * Register and load font awesome CSS files using a CDN.
+ */
+function prefix_enqueue_awesome() {
+    wp_enqueue_style(
+        'font-awesome-5',
+        'https://use.fontawesome.com/releases/v5.3.0/css/all.css',
+        array(),
+        '5.3.0'
+    );
+}
