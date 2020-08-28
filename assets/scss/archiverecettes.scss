@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900');
+
+$white: #fff;
+$black: #292929;
+$grey: #F5F5F5;
+
+$fontnormal: 16px;
+$subtitlepage : 42px;
+
+@mixin normaltext {
+  font-size: 16px;
+  font-weigth: 300;
+}
+
+@mixin pagesubtitle{
+  font-size: 42px;
+  font-weight: 400;
+}
+
+@mixin pagetitle{
+  font-size: 46px;
+  font-weight: 700;
+}
+
+@mixin maintitle{
+  font-size : 100px;
+  font-weight: 600;
+}
+
+@mixin mainsubtitle{
+  font-size: 60px;
+  font-weight: 400;
+}
+
+@mixin menutext{
+  font-size: 16px;
+  font-weight: 500;
+}
+.wrapper{
+  width: 100%;
+}
+
+.container-fluid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 80% !important;
+  max-width: 960px;
+  margin:{
+    left:auto;
+    right:auto;
+  }
+  padding:{
+    left: 15px;
+    right: 15px;
+  }
+}
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: max(1);
+
+}
+
+.d-flex{
+  display:flex;
+}
+
+.between{
+  justify-content: space-between;
+}
+
+.margey{
+  margin:{
+    top:auto;
+    bottom:auto;
+  }
+}
+
+.margex{
+  left:auto;
+  right:auto;
+}
+
+.mt15{
+  margin-top:15%;
+}
+
+body{
+  font-family: 'poppins', sans-serif !important;
+  background-color: $grey;
+}
+
+.header{
+  position: absolute;
+  top:0px;
+  z-index: 999;
+}
+
+.bannerrecettes{
+  width: 100%;
+  grid-column: span 12;
+
+  &__subtitles{
+    width: 80%;
+    position: absolute;
+    top:10%;
+    left: 5%;
+    &--text{
+      font-size: 16px;
+      color: $white;
+    }
+  }
+
+  &__title{
+    width: 80%;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+
+    &--text{
+      font-size: 24px;
+      color: $white;
+    }
+  }
+  &__image{
+    position: relative;
+    top:0px;
+    &--attrib{
+      width: 100%;
+      filter: brightness(50%);
+    }
+  }
+
+  &__link{
+    display:flex;
+    position: absolute;
+    top:30%;
+    left: 5%;
+
+    &__line{
+      height: 0px;
+      width: 15px;
+      border: $white solid 1px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    &--text{
+      font-size: 12px;
+      margin-left: 15px;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.imghachures{
+  position: absolute;
+  transform: scale(-1,-1);
+  width: 100%;
+  margin-top: -10px;
+}
+
+.recettesmenu{
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  &__image{
+    height: 10px;
+    width: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__item{
+    display: flex;
+    grid-column: span 6;
+    margin-top: 10px;
+
+    a{
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    color: $black;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    }
+  }
+}
+
+.recetteslist{
+
+  &__single{
+    margin-top: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+
+    &--image{
+      width: 100%;
+    }
+
+    &__date{
+      display: flex;
+      justify-content: center;
+      &--image{
+        filter: invert(100);
+      }
+      &--text{
+        margin-left: 10px;
+
+      }
+    }
+
+    &--title{
+
+    }
+
+
+    &--category{
+
+    }
+    &--titre{
+
+    }
+    &--description{
+
+    }
+    &--link{
+
+    }
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+
+//  Contenu Desktop
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .bannerrecettes{
+    width: 100%;
+    grid-column: span 12;
+
+    &__subtitles{
+      width: 80%;
+      position: absolute;
+      top:10%;
+      left: 5%;
+      &--text{
+        @include mainsubtitle;
+        color: $white;
+      }
+    }
+
+    &__title{
+      width: 80%;
+      position: absolute;
+      top: 15%;
+      left: 5%;
+
+      &--text{
+        @include maintitle;
+        color: $white;
+      }
+    }
+    &__image{
+      position: relative;
+      top:0px;
+      &--attrib{
+        width: 100%;
+        filter: brightness(50%);
+      }
+    }
+
+    &__link{
+      display:flex;
+      position: absolute;
+      top:40%;
+      left: 5%;
+
+      &__line{
+        height: 0px;
+        width: 20px;
+        border: $white solid 1px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      &--text{
+        @include menutext;
+        margin-left: 15px;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .imghachures{
+    position: absolute;
+    transform: scale(-1,-1);
+    width: 100%;
+    margin-top: -10px;
+  }
+
+  .recettesmenu {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__image {
+      height: 12px;
+      width: 12px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    &__item {
+      display: flex;
+      grid-column: span 3;
+
+
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        color: $black;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+

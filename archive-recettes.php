@@ -9,28 +9,56 @@ get_header(); ?>
 <?php
 
 ?>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="bannerrecettes">
+            <div class="bannerrecettes__image">
+                <img class="bannerrecettes__image--attrib" src="../wp-content/themes/quattroformaggi/img/resto1.jpg"/>
+            </div>
+            <img class="imghachures" src="/wp-content/themes/quattroformaggi/img/hachures-grises.png"/>
 
-
-<img src="../wp-content/themes/quattroformaggi/img/resto3.jpg"/><br>
-
+            <div class="bannerrecettes__subtitles">
+                <h2 class="bannerrecettes__subtitles--text">
+                    La sélection du chef
+                </h2>
+            </div>
+            <div class="bannerrecettes__title">
+                <h1 class="bannerrecettes__title--text">
+                    Les recettes
+                </h1>
+            </div>
+            <div class="bannerrecettes__link">
+                <div class="bannerrecettes__link__line"></div>
+                <a class="bannerrecettes__link--text" href="#">Voir le menu</a>
+            </div>
+        </div>
+    </div>
+        <div class="recettesmenu">
 <?php
 $baseURL = "http://".$_SERVER['HTTP_HOST'];
 $recetteType = get_categories(array(
         'category' => 'recettes',
         'hide_empty' => false,
     ));
-
-    echo '<a href="'.$baseURL.'/recettes/">Toutes les recettes</a><br>    ';
+    echo '<div class="recettesmenu__item">';
+        echo '<img class="recettesmenu__image margey" src="/wp-content/themes/quattroformaggi/img/svg/cutelry.svg" alt="Cutelry icon"/>';
+        echo '<a href="'.$baseURL.'/recettes/">Toutes les recettes</a>    ';
+    echo '</div>';
     foreach($recetteType as $type){
 
-        if($type->slug != 'default_cat')
-        echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a><br>    ';
-    }
+        if($type->slug != 'default_cat'){
+        echo '<div class="recettesmenu__item">';
+            echo '<img class="recettesmenu__image margey" src="/wp-content/themes/quattroformaggi/img/svg/cutelry.svg" alt="Cutelry icon"/>';
+            echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a>    ';
+        echo '</div>';
+        }
+    }?>
 
+        </div>
+    <div class="recetteslist">
 
-
+<?php
     if(have_posts()){ ?>
-        <h1>Toutes les recettes</h1>
         <?php
         while(have_posts()):the_post();
 
@@ -39,10 +67,7 @@ $recetteType = get_categories(array(
 
 
 
-<article class="post">
-
-    <h2><?php the_title(); ?></h2>
-    <?php the_post_thumbnail('thumbnail'); ?>
+<article class="recetteslist__single">
 
     <?php
 
@@ -57,23 +82,28 @@ $recetteType = get_categories(array(
 
     ?>
 
-    <img src="<?php echo $URLImageRecette; ?>"/>
-    <p><?php echo $date; ?></p>
-    <p><?php echo $categoryRecette; ?></p>
-    <p><?php echo $titreRecette; ?></p>
-    <p><?php echo $description; ?></p>
+
+    <img  class="recetteslist__single--image"src="<?php echo $URLImageRecette; ?>"/>
+    <div class="recetteslist__single__date">
+        <img  class="recetteslist__single__date--image" src="/wp-content/themes/quattroformaggi/img/svg/time-clock.svg" alt="Clock icon""/>
+        <p class="recetteslist__single__date--text"><?php echo $date; ?></p>
+    </div>
+    <p class="recetteslist__single--category"><?php echo $categoryRecette; ?></p>
+    <p class="recetteslist__single--titre"><?php echo $titreRecette; ?></p>
+    <p class="recetteslist__single--description"><?php echo $description; ?></p>
 
 
 
     <p>
-        <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
+        <a  class="recetteslist__single--link" href="<?php the_permalink(); ?>">Lire la suite</a>
     </p>
 
 </article>
 
-<?php endwhile;
 
-        recettes_pagination($wp_query);
+<?php endwhile;?>
+</div>
+        <?php recettes_pagination($wp_query);
 
 
     } else {

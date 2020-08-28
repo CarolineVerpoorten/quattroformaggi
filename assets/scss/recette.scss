@@ -50,6 +50,7 @@ $subtitlepage : 42px;
   display:grid;
   grid-template-columns: repeat(12, 1fr);
   width: 60%;
+  max-width: 960px;
   margin:{
     left:auto;
     right:auto;
@@ -93,6 +94,7 @@ $subtitlepage : 42px;
 
 body{
   font-family: 'poppins', sans-serif !important;
+  //overflow-x: hidden;
 }
 
 .header{
@@ -256,6 +258,7 @@ body{
     &__top {
       margin-top: 15%;
       width: 60%;
+      max-width: 1140px;
       margin-right: auto;
       margin-left: auto;
 
@@ -285,6 +288,7 @@ body{
     }
     &__title{
       width: 60%;
+      max-width: 1140px;
       margin-left: auto;
       margin-right: auto;
       margin-top: 5% !important;
@@ -293,6 +297,7 @@ body{
 
     &__description{
       width: 60%;
+      max-width: 1140px;
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 5%;
@@ -308,12 +313,16 @@ body{
   .contentrecette{
 
     &__ingredients{
-      margin-left: 20%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+
     }
 
     &__instructions{
 
       width: 60%;
+      max-width: 1140px;
       margin-left: auto;
       margin-right: auto;
       margin-top: 100px;

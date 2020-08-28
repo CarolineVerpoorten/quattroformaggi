@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   width: 60%;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -166,6 +167,7 @@ body {
     .bannerrecette__top {
       margin-top: 15%;
       width: 60%;
+      max-width: 1140px;
       margin-right: auto;
       margin-left: auto; }
       .bannerrecette__top__lien {
@@ -185,12 +187,14 @@ body {
           margin-left: 60% !important; }
     .bannerrecette__title {
       width: 60%;
+      max-width: 1140px;
       margin-left: auto;
       margin-right: auto;
       margin-top: 5% !important;
       margin-bottom: 5% !important; }
     .bannerrecette__description {
       width: 60%;
+      max-width: 1140px;
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 5%; }
@@ -200,9 +204,12 @@ body {
       margin: auto;
       z-index: 999; }
   .contentrecette__ingredients {
-    margin-left: 20%; }
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px; }
   .contentrecette__instructions {
     width: 60%;
+    max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px; }
