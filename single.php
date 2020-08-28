@@ -33,19 +33,23 @@ $image = get_field('photo');?>
 
 
   <article class="post">
-    <?php if( get_field('photo') ): ?>
-      <img class="top_image" src="<?php the_field('photo'); ?>" />
-    <?php endif; ?>
-    <div class="post_text">
-      <h5><?php the_field('sur_titre'); ?></h5>
-    	<h4><?php the_title(); ?></h4>
-      <p><?php the_excerpt();?></p>
+    <div class="post_part">
+      <?php if( get_field('photo') ): ?>
+        <img class="top_image" src="<?php the_field('photo'); ?>" />
+      <?php endif; ?>
+      <div class="post_text">
+        <h5><?php the_field('sur_titre'); ?></h5>
+      	<h4><?php the_title(); ?></h4>
+        <p><?php the_excerpt();?></p>
+      </div>
     </div>
-    <img class="top_image" src="wp-content/themes/quatroformaggi/img/plate1.png" alt="Plate">
-    <div class="post_text">
-      <h5><?php the_field('sur_titre'); ?></h5>
-      <h4><?php the_title(); ?></h4>
-      <p><?php the_field('description'); ?></p>
+    <div class="post_part">
+      <img class="top_image" src="wp-content/themes/quatroformaggi/img/plate1.png" alt="Plate">
+      <div class="post_text">
+        <h5><?php the_field('sur_titre'); ?></h5>
+        <h4><?php the_title(); ?></h4>
+        <p><?php the_field('description'); ?></p>
+      </div>
     </div>
   </article>
 
@@ -74,63 +78,86 @@ $image = get_field('photo');?>
   </div>
 </div>
 
-<img class="top_image" src="wp-content/themes/quatroformaggi/img/plate2.png" alt="Plate">
-
-<div class="form_reservation">
-  <form class="form_item" action="index.html" method="post">
-    <label class="form_label" for="name">Your Name</label><br>
-    <input class="form_item" type="text" name="name" autocomplete="off" label="Your name" required="required" /><br>
-    <label class="form_label" for="email">Your Email</label><br>
-    <input class="form_item" type="text" name="email" autocomplete="off" label="Your name" required="required" /><br>
-    <label class="form_label" for="phone">Phone Number</label><br>
-    <input class="form_item" type="text" name="phone" autocomplete="off" label="Your name" required="required" /><br>
-    <label class="form_label" for="people">Table For</label><br>
-    <select name="people" class="form_item" required="required">
-      <option value="1" selected="selected">1 Person</option>
-      <option value="2">2 Persons</option>
-      <option value="3">3 Persons</option>
-      <option value="4">4 Persons</option>
-    </select><br>
-    <label class="form_label" for="place">Place</label><br>
-    <select name="place" class="form_item" required="required">
-      <option value="1" selected="selected">The Chef's Cafeteria - Liège</option>
-      <option value="2">BeCentral Resto - Brussels</option>
-      <option value="3">The Honkytonk - Houte-Si-Plout</option>
-    </select><br>
-    <label class="form_label" for="time">Select time</label><br>
-    <input class="form_item" type="time" name="time" required="required" placeholder="12:30 AM"/><br>
-    <label class="form_label" for="date">Select Date</label><br>
-    <input class="form_item" type="date" name="date_debut" placeholder="31 December 2019"><br>
-    <label class="form_label" for="message">Your Message</label><br>
-    <textarea class="form_item" name="message" rows="8" cols="45" autocomplete="off" required="required"></textarea><br>
-  </form>
-  <a class="button_rest" href="#">RESERVE NOW</a>
+<div class="form_side_image">
+  <img src="wp-content/themes/quatroformaggi/img/plate2.png" alt="Plate">
 </div>
 
-<div class="post_text">
-  <div class="top_title_group">
-    <div class="top_subtitle">
-      <h3>LET'S DISCOVER FOOD</h3>
-    </div>
-    <div class="top_title">
-      <h2>DISCOVER OUR MENU</h2>
-    </div>
+<div class="form_and_recipes">
+  <div class="form_reservation">
+    <form class="form_form" action="index.html" method="post">
+      <div class="form_columns_container">
+        <div class="form_name">
+          <label class="form_label" for="name">Your Name</label><br>
+          <input class="form_item" type="text" name="name" autocomplete="off" label="Your name" required="required" /><br>
+        </div>
+        <div class="form_email">
+          <label class="form_label" for="email">Your Email</label><br>
+          <input class="form_item" type="text" name="email" autocomplete="off" label="Your name" required="required" /><br>
+        </div>
+        <div class="form_phone">
+          <label class="form_label" for="phone">Phone Number</label><br>
+          <input class="form_item" type="text" name="phone" autocomplete="off" label="Your name" required="required" /><br>
+        </div>
+        <div class="form_persons">
+          <label class="form_label" for="people">Table For</label><br>
+          <select name="people" class="form_item" required="required">
+            <option value="1" selected="selected">1 Person</option>
+            <option value="2">2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4">4 Persons</option>
+          </select><br>
+        </div>
+      </div>
+      <label class="form_label" for="place">Place</label><br>
+      <select name="place" class="form_item" required="required">
+        <option value="1" selected="selected">The Chef's Cafeteria - Liège</option>
+        <option value="2">BeCentral Resto - Brussels</option>
+        <option value="3">The Honkytonk - Houte-Si-Plout</option>
+      </select><br>
+      <div class="form_columns_container">
+        <div class="form_time"
+          <label class="form_label" for="time">Select time</label><br>
+          <input class="form_item" type="time" name="time" required="required" placeholder="12:30 AM"/><br>
+        </div>
+        <div class="form_date">
+          <label class="form_label" for="date">Select Date</label><br>
+          <input class="form_item" type="date" name="date_debut" placeholder="31 December 2019"><br>
+        </div>
+      </div>
+      <label class="form_label" for="message">Your Message</label><br>
+      <textarea class="form_item" name="message" rows="8" cols="45" autocomplete="off" required="required"></textarea><br>
+    </form>
+    <a class="button_rest" href="#">RESERVE NOW</a>
   </div>
-  <p class="p_centered">For those with pure food indulgence in mind, come next door and sate your desires with our ever changing internationally and seasonally inspired small plates. We love food, lots of different food, just like you.</p>
-  <a class="button_rest" href="page-menu.php">View the full Menu</a>
-</div>
 
-<img class="bottom_hach" src="wp-content/themes/quatroformaggi/img/hachures-grises.png" alt="Hachures">
-
-<div class="recipes">
-  <div class="top_title_group">
-    <div class="top_subtitle">
-      <h3>Latest updated</h3>
+  <div class="post_text">
+    <div class="top_title_group">
+      <div class="top_subtitle">
+        <h3>LET'S DISCOVER FOOD</h3>
+      </div>
+      <div class="top_title">
+        <h2>DISCOVER OUR MENU</h2>
+      </div>
     </div>
-    <div class="top_title">
-      <h2>RECIPES BLOG</h2>
-    </div>
+    <p class="p_centered">For those with pure food indulgence in mind, come next door and sate your desires with our ever changing internationally and seasonally inspired small plates. We love food, lots of different food, just like you.</p>
+    <a class="button_rest" href="page-menu.php">View the full Menu</a>
   </div>
-  <?php wppln_last_posts('2','4','true'); ?>
+
+  <img class="bottom_hach" src="wp-content/themes/quatroformaggi/img/hachures-grises.png" alt="Hachures">
+
+  <div class="recipes">
+    <div class="top_title_group">
+      <div class="top_subtitle">
+        <h3>Latest updated</h3>
+      </div>
+      <div class="top_title">
+        <h2>RECIPES BLOG</h2>
+      </div>
+    </div>
+    <?php wppln_last_posts('2','4','true'); ?>
+  </div>
+
 </div>
+
+
 <?php get_footer(); ?>

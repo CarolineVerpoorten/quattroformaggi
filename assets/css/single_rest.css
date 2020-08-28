@@ -13,28 +13,60 @@ h2 {
   font-size: 40px;
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 60px;
+  }
+}
 
 h3 {
   font-size: 30px;
   font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 40px;
+  }
 }
 
 h4 {
   font-size: 35px;
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  h4 {
+    font-size: 45px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+}
 
 h5 {
   font-size: 25px;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  h5 {
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
 
 p {
   font-size: 10px;
   font-weight: 400;
-  text-align: left;
   line-height: 35px;
   margin-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    line-height: 45px;
+  }
 }
 
 ul {
@@ -47,9 +79,26 @@ a {
   text-decoration: none;
 }
 
+@media screen and (min-width: 1024px) {
+  .post_part {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+    border: 1px solid grey;
+  }
+}
+
 .post_text {
   margin-left: 40px;
   margin-right: 40px;
+}
+@media screen and (min-width: 768px) {
+  .post_text {
+    margin-left: 65px;
+    margin-right: 65px;
+  }
 }
 
 .banner-container {
@@ -83,6 +132,7 @@ a {
 @media only screen and (min-width: 768px) {
   .banner-title {
     top: 280px;
+    font-size: 80px;
   }
 }
 
@@ -94,6 +144,7 @@ a {
 @media only screen and (min-width: 768px) {
   .banner-subtitle {
     top: 200px;
+    font-size: 50px;
   }
 }
 
@@ -181,7 +232,7 @@ a {
   background-color: whitesmoke;
 }
 
-.middle_hach {
+.middle_hachures {
   width: 100%;
   margin-bottom: 150px;
 }
@@ -195,6 +246,24 @@ a {
   margin-top: -30px;
 }
 
+.form_side_image {
+  width: 100%;
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 1024px) {
+  .form_side_image {
+    width: 60%;
+    text-align: left !important;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form_and_recipes {
+    position: absolute;
+  }
+}
+
 .form_reservation {
   background-color: whitesmoke;
   margin-top: 0px;
@@ -202,10 +271,42 @@ a {
   padding: 50px;
   padding-bottom: 70px;
 }
+@media screen and (min-width: 768px) {
+  .form_reservation {
+    margin-top: -100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    z-index: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form_reservation {
+    width: 35%;
+    margin-top: -750px;
+    margin-left: 50%;
+    margin-bottom: 200px;
+  }
+}
+
+.form_form {
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .form_columns_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+  .form_columns_container .form_item {
+    width: 95%;
+  }
+}
 
 .form_label {
   text-align: left;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .form_item {
@@ -236,7 +337,7 @@ a {
 .bottom_hach {
   width: 100%;
   margin-top: 100px;
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
   transform: rotate(180deg);
 }
 
