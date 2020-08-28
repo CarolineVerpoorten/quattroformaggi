@@ -9,9 +9,26 @@
 
 <body <?php body_class(); ?>>
     <header class="header">
-        <div class="navbar">
+    <nav role="navigation" class="navbar">
+        <div class="nav-title all-caps">Quattro Formaggi</div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" onchange="myFunction(this)"/>
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <div id="nav-list">
             <?php wp_nav_menu(); ?>
+            <div class="navbar-order all-caps">Order</div>
         </div>
+        
+    </nav>
+    <script>
+        function myFunction(checkboxElem) {
+            var x = document.getElementById("nav-list");
+            if (checkboxElem.checked) {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            }
+    </script>
     </header>    
     
     

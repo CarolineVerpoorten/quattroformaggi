@@ -13,8 +13,8 @@ $image = get_field('image');?>
 
 </div>
 
-<div class="hachures-banner">
-    <img class="bordure-hachure"src="https://raw.githubusercontent.com/becodeorg/LIE-Jepsen-3.20/master/02-the-hill/06-wordpress/project/assets/images/hachures-blanches.png?token=APOXPWZHSGUATKTHO4ABFBS7JYNH6" />
+<div class="hachures-banner-menu">
+    <img class="bordure-hachure-menu"src="https://raw.githubusercontent.com/becodeorg/LIE-Jepsen-3.20/master/02-the-hill/06-wordpress/project/assets/images/hachures-blanches.png?token=APOXPWZHSGUATKTHO4ABFBS7JYNH6" />
 </div>
 
 <div class="menu-body">
@@ -46,7 +46,7 @@ $image = get_field('image');?>
                     $desc_plat = get_sub_field('description_plat');
                     $selection = get_sub_field('selection_du_chef'); ?>
 
-                    <?php if($selection == true){ echo "<div class='chef-selection all-caps'>chef selection</div>";} ?>
+                    <?php if($selection == true){ echo "<div class='chef-selection all-caps white'>chef selection</div>";} ?>
                     <li class="menu-list <?php if($selection == true){ echo 'highlight';}else{ echo 'not-highlight';} ?>" >
                         <div class="flex-container-menu">
                             <div class="nom-plat all-caps"><?= $nom_plat; ?></div>

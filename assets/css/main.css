@@ -68,7 +68,7 @@
   text-decoration: underline;
   color: #FFF; }
 
-.hachures-banner {
+.hachures-banner-menu {
   z-index: 3;
   width: 100%;
   top: 830px;
@@ -78,13 +78,13 @@
   -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1); }
   @media only screen and (min-width: 768px) {
-    .hachures-banner {
+    .hachures-banner-menu {
       top: 825px; } }
   @media only screen and (min-width: 1025px) {
-    .hachures-banner {
+    .hachures-banner-menu {
       top: 800px; } }
 
-.bordure-hachure {
+.bordure-hachure-menu {
   width: 100%; }
 
 .menu-body {
@@ -491,22 +491,8 @@ ul {
 .footer-hours-svg-flex {
   vertical-align: center; }
 
-.navbar ul {
-  margin: 20px 2% 0 2%;
+.header {
   width: 100%; }
-  @media only screen and (min-width: 768px) {
-    .navbar ul {
-      margin: 40px 10% 0 10%;
-      display: flex;
-      flex-direction: row;
-      align-items: center; } }
-  @media only screen and (min-width: 1025px) {
-    .navbar ul {
-      margin: 40px 15% 0 15%; } }
-
-.navbar li {
-  display: inline;
-  white-space: nowrap; }
 
 .navbar a:link {
   color: #FFF;
@@ -524,42 +510,140 @@ ul {
   color: #FFF;
   text-decoration: underline; }
 
-.title-homepage-link {
+.nav-title {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 600;
-  padding-bottom: 10x; }
-  @media only screen and (max-width: 1024px) {
-    .title-homepage-link {
-      font-size: 30px; } }
-
-.restaurants-link,
-.menu-link,
-.recipes-link {
-  font-size: 14px;
-  font-weight: 600; }
-  @media only screen and (max-width: 1024px) {
-    .restaurants-link,
-    .menu-link,
-    .recipes-link {
-      font-size: 20px; } }
-
-.restaurants-link {
-  padding-left: 3%; }
-  @media only screen and (min-width: 768px) {
-    .restaurants-link {
-      padding-left: 10%; } }
+  position: absolute;
+  margin: 30px 0 0 10%;
+  width: 200px; }
+  @media only screen and (min-width: 566px) {
+    .nav-title {
+      margin: 40px 0 0 10%;
+      width: 350px; } }
   @media only screen and (min-width: 1025px) {
-    .restaurants-link {
-      padding-left: 30%; } }
+    .nav-title {
+      margin: 65px 0 0 10%; } }
 
-.menu-link,
-.recipes-link {
-  padding-left: 10px; }
+@media only screen and (min-width: 1025px) {
+  .title-homepage-link,
+  .restaurants-link,
+  .menu-link,
+  .recipes-link,
+  .navbar-order {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 40px; } }
+
+.navbar-order {
+  display: block;
+  color: black;
+  background: #FFF; }
   @media only screen and (min-width: 1025px) {
-    .menu-link,
-    .recipes-link {
-      padding-left: 40px; } }
+    .navbar-order {
+      padding: 15px 35px 15px 35px;
+      border-radius: 2px;
+      margin-top: 60px;
+      margin-left: 30px; } }
+
+@media only screen and (min-width: 1025px) {
+  #nav-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%; } }
+
+@media only screen and (max-width: 1024px) {
+  #nav-list {
+    display: none;
+    float: right;
+    padding-right: 200px;
+    padding-bottom: 20px; }
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    list-style: none;
+    overflow: hidden;
+    background: #292929;
+    width: 500px;
+    height: 250px; }
+  .navbar li {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none; }
+  .navbar .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none; }
+  /* menu */
+  .navbar .navbar ul {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out; }
+  /* menu icon */
+  .navbar .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 35px 25px;
+    position: relative;
+    user-select: none;
+    z-index: 3; }
+  .navbar .menu-icon .navicon {
+    background: #FFF;
+    display: block;
+    height: 3px;
+    border-radius: 5px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 50px; }
+  .navbar .menu-icon .navicon:before,
+  .navbar .menu-icon .navicon:after {
+    background: #FFF;
+    content: '';
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%; }
+  .navbar .menu-icon .navicon:before {
+    top: 12px; }
+  .navbar .menu-icon .navicon:after {
+    top: -12px; }
+  /* menu btn */
+  .navbar .menu-btn {
+    display: none; }
+  .navbar .menu-btn:checked ~ .navbar ul {
+    max-height: 240px; }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent; }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg); }
+  .navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg); }
+  .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0; } }
+
+@media (min-width: 1025px) {
+  .navbar li {
+    float: right;
+    list-style: none; }
+  .navbar li a {
+    padding: 20px 30px; }
+  .navbar .navbar ul {
+    clear: none;
+    float: right;
+    max-height: none; }
+  .navbar .menu-icon,
+  .menu-btn {
+    display: none; } }
 
 html, body {
   font-family: 'Poppins', sans-serif;

@@ -67,7 +67,7 @@
   text-decoration: underline;
   color: #FFF; }
 
-.hachures-banner {
+.hachures-banner-menu {
   z-index: 3;
   width: 100%;
   top: 830px;
@@ -77,13 +77,13 @@
   -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1); }
   @media only screen and (min-width: 768px) {
-    .hachures-banner {
+    .hachures-banner-menu {
       top: 825px; } }
   @media only screen and (min-width: 1025px) {
-    .hachures-banner {
+    .hachures-banner-menu {
       top: 800px; } }
 
-.bordure-hachure {
+.bordure-hachure-menu {
   width: 100%; }
 
 .menu-body {
