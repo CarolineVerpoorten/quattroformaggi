@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900');
+
+$white: #fff;
+$black: #292929;
+$grey: #F5F5F5;
+
+$fontnormal: 16px;
+$subtitlepage : 42px;
+
+@mixin normaltext {
+  font-size: 16px;
+  font-weigth: 300;
+}
+
+@mixin pagesubtitle{
+  font-size: 42px;
+  font-weight: 400;
+}
+
+@mixin pagetitle{
+  font-size: 46px;
+  font-weight: 700;
+}
+
+@mixin maintitle{
+  font-size : 100px;
+  font-weight: 600;
+}
+
+@mixin mainsubtitle{
+  font-size: 60px;
+  font-weight: 400;
+}
+
+@mixin menutext{
+  font-size: 16px;
+  font-weight: 500;
+}
+.wrapper{
+  width: 100%;
+}
+
+.container-fluid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 60%;
+  max-width: 960px;
+  margin:{
+    left:auto;
+    right:auto;
+  }
+  padding:{
+    left: 15px;
+    right: 15px;
+  }
+}
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: max(1);
+
+}
+
+.d-flex{
+  display:flex;
+}
+
+.between{
+  justify-content: space-between;
+}
+
+.margey{
+  margin:{
+    top:auto;
+    bottom:auto;
+  }
+}
+
+.margex{
+  left:auto;
+  right:auto;
+}
+
+.mt15{
+  margin-top:15%;
+}
+
+body{
+  font-family: 'poppins', sans-serif !important;
+  //overflow-x: hidden;
+}
+
+.header{
+  position: absolute;
+  top:0px;
+  z-index: 999;
+}
+
+.bannerrecette{
+  background-color: $black;
+  position: relative;
+  grid-column: span 12;
+  width: 100%;
+
+  .imghachures{
+    display:none;
+  }
+
+  &__top{
+    margin-top: 30%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    i{
+      color: $white;
+    }
+
+    &__lien{
+      @include menutext;
+      text-decoration: none;
+      color: $white;
+      margin-left: 10px;
+    }
+
+    &__date{
+      @include menutext;
+      color: $white;
+      grid-column: span 8;
+    }
+
+    &__image{
+      height: 16px;
+      filter: invert(100);
+      grid-column: 9;
+    }
+
+    &__categorie{
+      @include menutext;
+      color: $white;
+      grid-column-start: 10;
+      grid-column-end: 13;
+    }
+  }
+  &__title{
+    font-size: 20px;
+    font-weight: 300;
+    color: $white;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  &__description{
+    padding-left: 10%;
+    padding-right: 10%;
+    @include menutext;
+    line-height: 2em;
+    color:$white;
+  }
+  &__image{
+    margin-top: 30px;
+    img{
+      width: 100%;
+      z-index: 100;
+    }
+  }
+}
+
+.contentrecette{
+  grid-column: span 12;
+  &__ingredients{
+    margin-left: 10%;
+    margin-top: 50px;
+    &--title{
+      font-size: 28px;
+      font-weight: 600;
+    }
+    &--list{
+      padding-right: 30px;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      line-height: 1.5em;
+      ul{
+        padding-left: 15px;
+      }
+      li{
+        margin-top: 5px;
+        padding-left: 5px;
+      }
+      }
+    }
+  &__instructions{
+
+    &--title{
+      font-size: 28px;
+      font-weight: 600;
+      margin-left: 10%;
+      padding-right-right: 30px;
+    }
+    p{
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      line-height: 1.5em;
+      margin-left: 15px;
+      margin-right: 15px;
+      grid-column-start: 2;
+      grid-column: span 11;
+    }
+    &__number{
+      margin-left: 30px !important;
+      background-color: $black;
+      width: 25px;
+      height: 20px;
+      color: $white;
+      text-align:center;
+      padding-top: 5px;
+      border-radius: 50%;
+      grid-column: 1 !important;
+    }
+    &--image{
+      width: 100%;
+      grid-column: span 12;
+    }
+  }
+  }
+
+
+@media screen and (min-width: 1025px) {
+
+  .container-fluid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+  }
+
+  .bannerrecette {
+    width: 100%;
+    height: 85%;
+    z-index: 5;
+
+    .imghachures{
+      display: block !important;
+      transform: scale(-1, -1);
+      position: absolute;
+      top: 99%;
+      left:-1px;
+      width: 100vw;
+      z-index: 1;
+    }
+
+    &__top {
+      margin-top: 15%;
+      width: 60%;
+      max-width: 1140px;
+      margin-right: auto;
+      margin-left: auto;
+
+      &__lien{
+        padding-right: 30px !important;
+      }
+
+      div {
+        display: flex;
+        margin-right: 0px;
+        grid-column-start: 12 !important;
+        grid-column: span 10 !important;
+        width: 100%;
+        justify-content: space-between !important;
+
+
+        p {
+          font-size: 24px;
+          font-weight: 700;
+          margin-left: 30px;
+        }
+
+        img {
+          margin-left: 60% !important;
+        }
+      }
+    }
+    &__title{
+      width: 60%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5% !important;
+      margin-bottom: 5% !important;
+    }
+
+    &__description{
+      width: 60%;
+      max-width: 1140px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 5%;
+    }
+
+    &__image{
+      width: 80%;
+      position: relative;
+      margin: auto;
+      z-index: 999;
+    }
+  }
+  .contentrecette{
+
+    &__ingredients{
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+
+    }
+
+    &__instructions{
+
+      width: 60%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+
+      &--title{
+        margin-left: 0%;
+      }
+
+      .row {
+        margin-left: 0% !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .bannerrecette {
+
+    .imghachures{
+      display:none;
+    }
+
+    &__top {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      a {
+        grid-column: 2;
+        font-weight: 700;
+        font-size: 24px;
+        border-right: $white 1px solid;
+        padding-right: 20px;
+
+      }
+
+      &__icon {
+        grid-column: 1;
+        font-size: 24px;
+      }
+
+      &__lien {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      div {
+        display: flex;
+        grid-column: span 10 !important;
+        grid-column-start: 8;
+        margin-top: 0px;
+        justify-content: space-evenly;
+        p{
+          font-size: 24px;
+          font-weight: 700;
+        }
+
+        img {
+          margin-left: 25%;
+        }
+
+      }
+
+    }
+
+    &__title {
+      margin-top: 20%;
+      margin-bottom: 10%;
+    }
+    &__description{
+      font-size: 26px;
+    }
+
+  }
+
+  .contentrecette{
+    &__ingredients{
+      &--list{
+        font-size:20px;
+        font-weight: 400;
+      }
+    }
+    &__instructions{
+      .row{
+        margin-left: 10%;
+      }
+      p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-left: 15px;
+        margin-right: 10%;
+        }
+      &__number{
+        width: 35px;
+        height: 30px;
+        margin-left: 0px !important;
+        }
+
+      img{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+

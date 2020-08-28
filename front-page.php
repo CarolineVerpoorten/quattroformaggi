@@ -1,13 +1,26 @@
-<?php 
-    get_header();
-?>
-    <body <? body_class(); ?>>
-        
-        <?php
-            wp_body_open();
-        ?>
-    </body>
+<?php get_header(); ?>
 
-<?php
-get_footer();
-?>
+<?php if(have_posts()):while(have_posts()):the_post(); ?>
+
+<?php if(has_category('Recette')){?>
+<article class="post">
+
+    <h2><?php the_title(); ?></h2>
+    <?php the_post_thumbnail('thumbnail'); ?>
+
+    <p class="post__meta">
+        Publiée le <?php the_time(get_option('date_format')); ?>
+        par <?php the_author(); ?> | <?php comments_number(); ?>
+    </p>
+
+    <?php the_excerpt(); ?>
+
+    <p>
+        <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
+    </p>
+
+</article>
+
+<?php } endwhile; endif; ?>
+
+<?php get_footer(); ?>

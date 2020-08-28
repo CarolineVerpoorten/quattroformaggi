@@ -1,0 +1,23 @@
+{
+  "name": "quattroformaggi",
+  "version": "1.0.0",
+  "description": "Branch Fab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch assets/scss -o assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabquo/quattroformaggi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabquo/quattroformaggi/issues"
+  },
+  "homepage": "https://github.com/fabquo/quattroformaggi#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

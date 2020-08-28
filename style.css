@@ -4,3 +4,7 @@ Author: Quattro Formaggi Team
 Description: Thème projet BeCode
 Version: 1.0
 */
+
+@import 'assets/css/archiverecettes.css';
+@import 'assets/css/recette.css';
+@import 'assets/css/normalize.css';
