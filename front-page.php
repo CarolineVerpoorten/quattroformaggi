@@ -1,26 +1,32 @@
-<?php get_header(); ?>
 
-<?php if(have_posts()):while(have_posts()):the_post(); ?>
 
-<?php if(has_category('Recette')){?>
-<article class="post">
+<div class="front_rest">
 
-    <h2><?php the_title(); ?></h2>
-    <?php the_post_thumbnail('thumbnail'); ?>
+  <p>Discover our franchise</p>
+  <h3>OUR RESTAURANTS</h3>
+  <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-    <p class="post__meta">
-        Publiée le <?php the_time(get_option('date_format')); ?>
-        par <?php the_author(); ?> | <?php comments_number(); ?>
-    </p>
+		<article class="post">
+			<h2><?php the_title(); ?></h2>
 
-    <?php the_excerpt(); ?>
+        	<?php the_post_thumbnail(); ?>
 
-    <p>
-        <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
-    </p>
+            <p class="post__meta">
+                Publié le <?php the_time( get_option( 'date_format' ) ); ?>
+                par <?php the_author(); ?> • <?php comments_number(); ?>
+            </p>
 
-</article>
+      		<?php the_excerpt(); ?>
 
-<?php } endwhile; endif; ?>
+      		<p>
+                <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
+            </p>
+		</article>
 
-<?php get_footer(); ?>
+	<?php endwhile; endif; ?>
+
+</div>
+
+<?php
+get_footer();
+?>

@@ -17,7 +17,7 @@
             <?php wp_nav_menu(); ?>
             <div class="navbar-order all-caps">Order</div>
         </div>
-        
+
     </nav>
     <script>
         function myFunction(checkboxElem) {
@@ -29,7 +29,7 @@
             }
             }
     </script>
-    </header>    
-    
-    
+    </header>
+
+
 <?php wp_body_open(); ?>
