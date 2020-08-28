@@ -17,7 +17,7 @@ $recetteType = get_categories(array(
 echo '<a href="'.$baseURL.'/recettes/">Toutes les recettes</a><br>    ';
 foreach($recetteType as $type){
 
-    if($type->slug != 'default_cat')
+    if($type->slug != 'default_cat' && $type->slug !='restaurant')
         echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a><br>';
 }
 

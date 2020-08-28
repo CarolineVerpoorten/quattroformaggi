@@ -5,7 +5,7 @@ Template Name: Menu Restaurant
 get_header(); 
 $image = get_field('image');?>
 
-<div class="banner-container" <?php if( !empty( $image ) ):?>style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?php echo esc_url($image['url']); ?>');"<?php endif;?>> 
+<div class="banner-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../wp-content/themes/quattroformaggi/img/banner-top.jpg');"> 
 
     <div class="banner-text banner-subtitle white"><?= the_field('sous-titre'); ?></div>
     <div class="banner-text banner-title all-caps white"><?= the_field('titre'); ?></div>
@@ -14,7 +14,7 @@ $image = get_field('image');?>
 </div>
 
 <div class="hachures-banner-menu">
-    <img class="bordure-hachure-menu"src="https://raw.githubusercontent.com/becodeorg/LIE-Jepsen-3.20/master/02-the-hill/06-wordpress/project/assets/images/hachures-blanches.png?token=APOXPWZHSGUATKTHO4ABFBS7JYNH6" />
+    <img class="bordure-hachure-menu"src="../wp-content/themes/quattroformaggi/img/hachures-grises.png" />
 </div>
 
 <div class="menu-body">

@@ -155,7 +155,7 @@ body {
   .bannerrecette {
     width: 100%;
     height: 85%;
-    z-index: 5; }
+    z-index: 1; }
     .bannerrecette .imghachures {
       display: block !important;
       transform: scale(-1, -1);

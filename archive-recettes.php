@@ -46,7 +46,7 @@ $recetteType = get_categories(array(
     echo '</div>';
     foreach($recetteType as $type){
 
-        if($type->slug != 'default_cat'){
+        if($type->slug != 'default_cat' && $type->slug !='restaurant'){
         echo '<div class="recettesmenu__item">';
             echo '<img class="recettesmenu__image margey" src="/wp-content/themes/quattroformaggi/img/svg/cutelry.svg" alt="Cutelry icon"/>';
             echo '<a href="'.$baseURL.'/categorie/' . $type->slug .'">'.$type->name .'</a>    ';

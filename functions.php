@@ -80,10 +80,10 @@ add_action('init','quattroformaggi_register_post_type');
 
 /* Configuration des menus du site */
 
-register_nav_menus( array(
-    'main' => 'Menu Principal',
-    'sub' => 'Menu footer'
-));
+// register_nav_menus( array(
+//     'main' => 'Menu Principal',
+//     'sub' => 'Menu footer'
+// ));
 
 /*************************************************************************/
 

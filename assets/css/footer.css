@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 .newsletter {
   background: #292929;
   width: 100%;
@@ -94,15 +98,15 @@
 
 .footer-body {
   background: #292929;
-  height: 1400px;
+  height: auto;
   position: relative;
   overflow-x: hidden; }
   @media only screen and (min-width: 768px) {
     .footer-body {
-      height: 1200px; } }
+      height: auto; } }
   @media only screen and (min-width: 1025px) {
     .footer-body {
-      height: 700px;
+      height: auto;
       width: 100%; } }
 
 .flex-container-footer {
